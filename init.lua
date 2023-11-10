@@ -67,6 +67,8 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 
 vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.expandtab = true
 
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
@@ -575,6 +577,10 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
+require('luasnip').filetype_extend("typescript", { "typescriptreact" })
+require('luasnip').filetype_extend("javascript", { "javascriptreact" })
+require('luasnip').filetype_extend("typescript", { "html" })
+require('luasnip').filetype_extend("javascript", { "html" })
 
 cmp.setup {
   snippet = {
