@@ -65,6 +65,9 @@ vim.opt.rtp:prepend(lazypath)
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
+
+vim.opt.shiftwidth = 2
+
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
@@ -234,7 +237,6 @@ require('lazy').setup({
       }
     end,
   },
-
   { 'kevinhwang91/nvim-bqf' },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -370,6 +372,14 @@ vim.defer_fn(function()
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
+
+    autotag = {
+      enable = true,
+      enable_rename = true,
+      enable_close = true,
+      enable_close_on_slash = true,
+      filetypes = { "html", "xml", 'tsx' },
+    },
 
     highlight = { enable = true },
     indent = { enable = true },
@@ -525,6 +535,15 @@ local servers = {
 
 require 'lspconfig'.prismals.setup {}
 require 'lspconfig'.jsonls.setup {}
+require 'nvim-treesitter.configs'.setup {
+  autotag = {
+    enable = true,
+    enable_rename = true,
+    enable_close = true,
+    enable_close_on_slash = true,
+    filetypes = { "html", "xml" },
+  }
+}
 -- Setup neovim lua configuration
 require('neodev').setup()
 
