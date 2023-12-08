@@ -378,6 +378,9 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+vim.keymap.set('n', '<leader>fe', '<Cmd>NvimTreeToggle<CR>', { desc = '[F]ile [E]xplorer' })
+vim.keymap.set('n', '<leader>ff', '<Cmd>NvimTreeFindFile<CR>', { desc = '[F]ind [F]File' })
+vim.keymap.set('n', '<leader>fc', '<Cmd>NvimTreeFocus<CR>', { desc = '[F]File [F]Focus' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
