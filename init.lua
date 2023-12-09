@@ -379,8 +379,9 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<leader>fe', '<Cmd>NvimTreeToggle<CR>', { desc = '[F]ile [E]xplorer' })
-vim.keymap.set('n', '<leader>ff', '<Cmd>NvimTreeFindFile<CR>', { desc = '[F]ind [F]File' })
-vim.keymap.set('n', '<leader>fc', '<Cmd>NvimTreeFocus<CR>', { desc = '[F]File [F]Focus' })
+vim.keymap.set('n', '<leader>ff', '<Cmd>NvimTreeFindFile<CR>', { desc = '[F]ind [F]ile' })
+vim.keymap.set('n', '<leader>fc', '<Cmd>NvimTreeFocus<CR>', { desc = '[F]ile [F]ocus' })
+vim.keymap.set('n', '<leader>lr', '<Cmd>LspRestart<CR>', { desc = '[L]sp [R]estart' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -522,6 +523,8 @@ require('which-key').register {
   ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
   ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
   ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
+  ['<leader>f'] = { name = '[F]ile', _ = 'which_key_ignore' },
+  ['<leader>l'] = { name = '[L]SP', _ = 'which_key_ignore' },
   ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
 }
 
