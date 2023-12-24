@@ -179,7 +179,12 @@ require('lazy').setup({
       },
     },
   },
-
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require("nvim-treesitter")
+    end
+  },
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
@@ -398,8 +403,18 @@ vim.defer_fn(function()
       enable = true,
       enable_rename = true,
       enable_close = true,
-      enable_close_on_slash = true,
-      filetypes = { "html", "xml", 'tsx', 'ts', "javascript", "javascriptreact", "typescript", "typescriptreact" },
+      filetypes = {
+        "html",
+        "xml",
+        'tsx',
+        'ts',
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "handlebars",
+        "markdown"
+      },
     },
 
     highlight = { enable = true },
