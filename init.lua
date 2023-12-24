@@ -389,8 +389,7 @@ vim.keymap.set('n', '<leader>lr', '<Cmd>LspRestart<CR>', { desc = '[L]sp [R]esta
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
-      'bash' },
+    ensure_installed = { 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -400,7 +399,7 @@ vim.defer_fn(function()
       enable_rename = true,
       enable_close = true,
       enable_close_on_slash = true,
-      filetypes = { "html", "xml", 'tsx' },
+      filetypes = { "html", "xml", 'tsx', 'ts', "javascript", "javascriptreact", "typescript", "typescriptreact" },
     },
 
     highlight = { enable = true },
@@ -609,15 +608,6 @@ local servers = {
 
 require 'lspconfig'.prismals.setup {}
 require 'lspconfig'.jsonls.setup {}
-require 'nvim-treesitter.configs'.setup {
-  autotag = {
-    enable = true,
-    enable_rename = true,
-    enable_close = true,
-    enable_close_on_slash = true,
-    filetypes = { "html", "xml" },
-  }
-}
 -- Setup neovim lua configuration
 require('neodev').setup()
 
