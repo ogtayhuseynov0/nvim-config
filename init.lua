@@ -180,10 +180,15 @@ require('lazy').setup({
     },
   },
   {
-    'windwp/nvim-ts-autotag',
+    "windwp/nvim-ts-autotag",
+    dependencies = "nvim-treesitter/nvim-treesitter",
     config = function()
-      require("nvim-treesitter")
-    end
+      require('nvim-ts-autotag').setup({
+        filetypes = { "handlebars", "html", "javascript", "javascriptreact", "typescript", "typescriptreact", "markdown" }
+      })
+    end,
+    lazy = true,
+    event = "VeryLazy"
   },
   {
     -- Add indentation guides even on blank lines
